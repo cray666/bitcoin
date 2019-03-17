@@ -32,6 +32,7 @@ func (cli *CLI) addBlock(data string) {
 }
 
 func (cli *CLI) printChain() {
+	NewBlockchain()
 	bci := cli.bc.Iterator()
 
 	for {
