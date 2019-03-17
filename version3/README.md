@@ -244,7 +244,7 @@ func main() {
 }
 
 ```
-重新执行,正常的话,将看到下面的信息
+重新执行,正常的话,将看到下面的信息，从区块的hash我们也可以看出来，前面至少有4个0，这和我们定义的难度值有关
 ```shell
 Prev. hash: 000003fd136c6991e0213abf95ba77c52c1014267214007d29aab8ee17c7cdad
 Data: Send 2 more BTC to Bob
