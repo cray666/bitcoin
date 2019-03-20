@@ -128,25 +128,25 @@ func (u UTXOSet) Update(block *Block) {
 	//打开读写事务
     err := db.Update(func(tx *bolt.Tx) error {
         b := tx.Bucket([]byte(utxoBucket))
-		//遍历新增区块的交易
+	//遍历新增区块的交易
         for _, tx := range block.Transactions {
             if tx.IsCoinbase() == false {
-				//遍历每一笔输入	
+		//遍历每一笔输入	
                 for _, vin := range tx.Vin {
-					updatedOuts := TXOutputs{}
-					//根据交易id得到引用之前发生的交易输出的序列化数据
-					outsBytes := b.Get(vin.Txid)
-					//反序列化数据得到之前交易的输出
+		    updatedOuts := TXOutputs{}
+		    //根据交易id得到引用之前发生的交易输出的序列化数据
+		    outsBytes := b.Get(vin.Txid)
+		    //反序列化数据得到之前交易的输出
                     outs := DeserializeOutputs(outsBytes)
-					//遍历输出
+		    //遍历输出
                     for outIdx, out := range outs.Outputs {
-						//将之前的每一笔交易输出中没有被此次生成区块所引用的输出添加到updatedOuts.Outputs
+			//将之前的每一笔交易输出中没有被此次生成区块所引用的输出添加到updatedOuts.Outputs
                         if outIdx != vin.Vout {
                             updatedOuts.Outputs = append(updatedOuts.Outputs, out)
                         }
                     }
-					//如果之前某笔交易的输出都被引用了，那么就从UTXO集合中删除该笔交易
-					//否则就更新
+		     //如果之前某笔交易的输出都被引用了，那么就从UTXO集合中删除该笔交易
+		    //否则就更新
                     if len(updatedOuts.Outputs) == 0 {
                         err := b.Delete(vin.Txid)
                     } else {
@@ -155,7 +155,7 @@ func (u UTXOSet) Update(block *Block) {
 
                 }
             }
-			//同时将新得区块的每一集交易的产生的新的UTXO加入到UTXO集中
+	    //同时将新得区块的每一集交易的产生的新的UTXO加入到UTXO集中
             newOutputs := TXOutputs{}
             for _, out := range tx.Vout {
                 newOutputs.Outputs = append(newOutputs.Outputs, out)
