@@ -352,7 +352,6 @@ func (bc *Blockchain) VerifyTransaction(tx *Transaction) bool {
 }
 
 func dbExists(dbFile string) bool {
-
 	if _, err := os.Stat(dbFile); os.IsNotExist(err) {
 		return false
 	}

@@ -253,7 +253,8 @@ func handleInv(request []byte, bc *Blockchain) {
 }
 
 func handleGetBlocks(request []byte, bc *Blockchain) {
-var payload getblocks
+	var buff bytes.Buffer
+	var payload getblocks
 
 	buff.Write(request[commandLength:])
 	dec := gob.NewDecoder(&buff)
@@ -294,8 +295,7 @@ func handleGetData(request []byte, bc *Blockchain) {
 		// delete(mempool, txID)
 	}
 }
-	var buff bytes.Buffer
-	
+
 func handleTx(request []byte, bc *Blockchain) {
 	var buff bytes.Buffer
 	var payload tx

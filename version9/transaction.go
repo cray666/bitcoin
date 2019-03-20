@@ -15,7 +15,7 @@ import (
 	"log"
 )
 
-const subsidy = 10
+const subsidy = 50
 
 // Transaction represents a Bitcoin transaction
 type Transaction struct {
@@ -162,7 +162,7 @@ func (tx *Transaction) Verify(prevTXs map[string]Transaction) bool {
 
 		dataToVerify := fmt.Sprintf("%x\n", txCopy)
 
-		rawPubKey := ecdsa.PublicKey{curve, &x, &y}
+		rawPubKey := ecdsa.PublicKey{Curve: curve, X: &x, Y: &y}
 		if ecdsa.Verify(&rawPubKey, []byte(dataToVerify), &r, &s) == false {
 			return false
 		}
