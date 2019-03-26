@@ -140,3 +140,13 @@ Hash: 259d364c5df874fdbd1c0d3bfca1ada2f7584604e30702baee8a1cebd8305a7f
 真实的区块链远比这个要复杂。在我们的区块链中添加一个区块很快，也很简单，不过在真实的区块链中，添加一个新的区块需要费一番功夫：一是需要在添加区块前做一些复杂的计算来获取添加的权限(这个过程被称为工作量证明)。
 
 而且，区块链并非是一个单节点决策的东西，它是一个分布式数据库。所以，一个新的区块必须被网络上的其他参与者确认和接受(这个过程被称作一致性)。
+
+- [基本原型](https://github.com/cray666/bitcoin/tree/master/version1)
+- [工作量证明](https://github.com/cray666/bitcoin/tree/master/version2)
+- [数据库存储](https://github.com/cray666/bitcoin/tree/master/version3)
+- [CLI](https://github.com/cray666/bitcoin/tree/master/version4)
+- [交易一](https://github.com/cray666/bitcoin/tree/master/version5)
+- [交易二](https://github.com/cray666/bitcoin/tree/master/version6)
+- [UTXO集](https://github.com/cray666/bitcoin/tree/master/version7)
+- [Merkle树](https://github.com/cray666/bitcoin/tree/master/version8)
+- [网络](https://github.com/cray666/bitcoin/tree/master/version9)

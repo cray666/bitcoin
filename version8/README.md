@@ -81,5 +81,14 @@ func NewMerkleNode(left, right *MerkleNode, data []byte) *MerkleNode {
 	return &mNode
 }
 ```
+- [基本原型](https://github.com/cray666/bitcoin/tree/master/version1)
+- [工作量证明](https://github.com/cray666/bitcoin/tree/master/version2)
+- [数据库存储](https://github.com/cray666/bitcoin/tree/master/version3)
+- [CLI](https://github.com/cray666/bitcoin/tree/master/version4)
+- [交易一](https://github.com/cray666/bitcoin/tree/master/version5)
+- [交易二](https://github.com/cray666/bitcoin/tree/master/version6)
+- [UTXO集](https://github.com/cray666/bitcoin/tree/master/version7)
+- [Merkle树](https://github.com/cray666/bitcoin/tree/master/version8)
+- [网络](https://github.com/cray666/bitcoin/tree/master/version9)
 
 

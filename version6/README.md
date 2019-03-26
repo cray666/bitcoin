@@ -431,4 +431,13 @@ func NewUTXOTransaction(from, to string, amount int, bc *Blockchain) *Transactio
 如果之前的整个流程你都很熟悉的话，修改cli是很简单的事情，由于目前我们的命令过多，文件过大，我们可以将cli中每个操作
 单独放在一个文件中。
 
+- [基本原型](https://github.com/cray666/bitcoin/tree/master/version1)
+- [工作量证明](https://github.com/cray666/bitcoin/tree/master/version2)
+- [数据库存储](https://github.com/cray666/bitcoin/tree/master/version3)
+- [CLI](https://github.com/cray666/bitcoin/tree/master/version4)
+- [交易一](https://github.com/cray666/bitcoin/tree/master/version5)
+- [交易二](https://github.com/cray666/bitcoin/tree/master/version6)
+- [UTXO集](https://github.com/cray666/bitcoin/tree/master/version7)
+- [Merkle树](https://github.com/cray666/bitcoin/tree/master/version8)
+- [网络](https://github.com/cray666/bitcoin/tree/master/version9)
 
