@@ -30,7 +30,7 @@ type Block struct {
 }
 ```
 字段解释
-```
+```go
 Timestamp     当前时间戳
 Data          整个打包的交易的数据的一个摘要
 PrevBlockHash 前一个区块hash
@@ -51,7 +51,7 @@ func (b *Block) SetHash() {
 ## 生成区块
 
 下面我们需要定义生成新的区块的函数，准备好了交易数据我们就可以生成区块了，因为`前一个区块的hash`,`时间戳`都是已知的。
-```
+```go
 func NewBlock(data string, prevBlockHash []byte) *Block {
     block := &Block{time.Now().Unix(), []byte(data), prevBlockHash, []byte{}}
     block.SetHash()
