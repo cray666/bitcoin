@@ -16,3 +16,4 @@ func (cli *CLI) listAddresses() {
 		fmt.Println(address)
 	}
 }
+

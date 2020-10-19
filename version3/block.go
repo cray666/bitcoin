@@ -7,9 +7,6 @@ import (
 	"time"
 )
 
-
-
-
 type Block struct {
 	Timestamp     int64
 	Data          []byte
@@ -17,8 +14,6 @@ type Block struct {
 	Hash          []byte
 	Nonce         int
 }
-
-
 
 func NewBlock(data string, prevBlockHash []byte) *Block {
 	block := &Block{time.Now().Unix(), []byte(data), prevBlockHash, []byte{},0}
@@ -49,7 +44,6 @@ func (b *Block) Serialize() []byte {
 //反序列化数据
 func DeserializeBlock(d []byte) *Block {
 	var block Block
-
 	decoder := gob.NewDecoder(bytes.NewReader(d))
 	err := decoder.Decode(&block)
 	if err != nil {
