@@ -34,7 +34,7 @@ PrevBlockHash 前一个区块hash
 Hash          本区块的hash  
 ```
 
-本区块的一个hash就是当准备好了其他三个数据之后，通过下面函函数
+本区块的一个hash就是当准备好了其他三个数据之后，通过下面函数
 
 ```go
 func (b *Block) SetHash() {
